@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Оголошення змінних для продукту
+        int price;
+        string productName;
+
+        // Введення інформації про продукт від користувача
+        Console.Write("Enter product name: ");
+        productName = Console.ReadLine();
+
+        Console.Write("Enter product price: ");
+        // Обробка вводу ціни, перевірка на коректність
+        while (!int.TryParse(Console.ReadLine(), out price))
+        {
+            Console.WriteLine("Enter correct price.");
+            Console.Write("Enter product price: ");
+        }
+
+        // Виведення інформації про продукт у консоль
+        Console.WriteLine("\nIformation about product:");
+        Console.WriteLine("Name: " + productName);
+        Console.WriteLine("Price: " + price + " $.");
+
+        // Затримка для того, щоб консольне вікно не закрилося відразу
+        Console.ReadLine();
+    }
+}

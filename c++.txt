@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+struct Product {
+    int price;
+    string productName;
+};
+
+int main() {
+    vector<Product> products; 
+
+    while (true) {
+        cout << "Type the name (or \"end\" to finalise the list): ";
+        string input;
+        cin>>input;
+
+        if (input == "end") {
+            break;
+        }
+
+        Product product;
+        
+        product.productName = input;
+
+        cout << "Type in the price: ";
+        cin >> product.price;
+
+        products.push_back(product);
+    }
+
+    cout << "\nInformation\n";
+    for (const Product& product : products) {
+        cout << "Name: " << product.productName << ", Price: " << product.price << endl;
+    }
+
+    return 0;
+}
